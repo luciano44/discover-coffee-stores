@@ -1,0 +1,43 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 0;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 3rem;
+  display: flex;
+  flex-direction: column;
+  text-shadow: 0 0 30px rgba(114, 56, 9, 0.5);
+}
+.title1 {
+  color: var(--text-color);
+}
+.title2 {
+  color: var(--main-color);
+}
+
+.button,
+.subTitle {
+  font-size: 1.1rem;
+}
+
+.subTitle {
+  margin: 25px 0;
+  color: var(--text-color);
+}
+
+.button {
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  background: var(--main-color);
+  color: var(--text-color);
+  font-weight: bold;
+}
