@@ -10,6 +10,18 @@ body {
   background-position: 50%;
 }
 
+.pdn {
+  padding: 25px;
+}
+
+.cards {
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+}
+
 a {
   color: inherit;
   text-decoration: none;
