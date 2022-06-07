@@ -3,8 +3,17 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Banner from "../components/banner";
 import Card from "../components/card";
+import coffeeStoresData from "../data/coffee-stores.json";
 
-export default function Home() {
+export async function getStaticProps(context) {
+  return {
+    props: {
+      coffeeStores: coffeeStoresData,
+    },
+  };
+}
+
+export default function Home(props) {
   function handleOnBannerBtnClick() {
     console.log("hey button!");
   }
@@ -22,12 +31,20 @@ export default function Home() {
           buttonText="im a buttonn"
           handleOnClick={handleOnBannerBtnClick}
         />
+        <div className="heading">São Paulo</div>
         <div className="cards">
-          <Card
-            name="DarkHorse Coffee"
-            imgUrl="/static/hero.png"
-            href="/coffee-store/darkhorse"
-          />
+          {props.coffeeStores.length > 0 ? (
+            props.coffeeStores.map((cs) => (
+              <Card
+                key={cs.id}
+                name={cs.name}
+                imgUrl={cs.imgUrl}
+                href={`/coffee-store/${cs.id}`}
+              />
+            ))
+          ) : (
+            <h2>Sorry, but there are no Coffee Shops Nearby!</h2>
+          )}
         </div>
       </main>
     </div>

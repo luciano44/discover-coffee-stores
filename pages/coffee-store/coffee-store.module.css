@@ -1,0 +1,18 @@
+.container {
+  padding: 30px;
+}
+
+.title {
+  background: rgba(255, 255, 255, 0.164);
+  width: fit-content;
+  margin-bottom: 5px;
+}
+
+.main {
+  text-align: center;
+  margin-bottom: 5px;
+  background: rgba(255, 255, 255, 0.164);
+  font-size: 2rem;
+  color: rgb(0, 255, 0);
+  padding: 10px;
+}

@@ -1,9 +1,7 @@
 .cardLink {
   display: flex;
   width: fit-content;
-  background: rgba(255, 255, 255, 0.35);
-  border-radius: 10px;
-  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
   margin: 10px;
 }
 

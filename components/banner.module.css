@@ -35,7 +35,6 @@
 .button {
   padding: 10px;
   border: none;
-  border-radius: 3px;
   background: var(--main-color);
   color: var(--text-color);
   font-weight: bold;
