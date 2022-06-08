@@ -1,0 +1,9 @@
+###
+POST http://localhost:3000/api/createTodo 
+content-type: application/json
+
+{
+    "name": "asdsa ",
+    "message": "seek knowledge"
+}
+

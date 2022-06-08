@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
@@ -14,6 +15,21 @@ export async function getStaticProps(context) {
 }
 
 export default function Home(props) {
+  const [todos, setTodos] = useState([{ title: "hello" }]);
+
+  useEffect(() => {
+    async function getTodos() {
+      try {
+        const res = await fetch("../api/getTodos");
+        const r = await res.json();
+        setTodos(r.response.slice(0, 10));
+      } catch (err) {
+        console.error(err);
+      }
+    }
+    getTodos();
+  }, []);
+
   function handleOnBannerBtnClick() {
     console.log("hey button!");
   }
@@ -47,6 +63,11 @@ export default function Home(props) {
           )}
         </div>
       </main>
+
+      <div className="heading">Todos</div>
+      <ul>
+        {todos.length > 0 && todos.map((l, i) => <li key={i}>{l.title}</li>)}
+      </ul>
     </div>
   );
 }
